@@ -1,8 +1,9 @@
+
 # mac-dotfiles
 An install script that contains profile settings a Mac-based system
 
 Baseline configuration:
-0. Geenral
+1. General
   * Settings > General
     * Dark Mode
     * Enable: "Automatically hide and show status bar"
@@ -10,15 +11,15 @@ Baseline configuration:
     * Automatically hide and show the Dock
   * Keyboard
     * Remap Caps Lock => Cmd
-1. Workflow setup
+2. Workflow setup
   * [yabai](https://github.com/koekeishiya/yabai) (tiling wm)
   * [skhd](https://github.com/koekeishiya/skhd) (hotkeys to setup wm to simulate i3wm)
   * [uebersicht](https://github.com/felixhageloh/uebersicht) (adding widgets)
-2. Terminal setup
+3. Terminal setup
   * Theme: Night Owl
   * Font: Dank Mono
   * zshrc + [oh my zsh config](https://ohmyz.sh/)
-3. IDE setup
+4. IDE setup
   * VS Code
     * Theme: Night Owl
     * Font: Dank Mono
@@ -31,15 +32,15 @@ Baseline configuration:
 	* Vim
 	* Prettier
 	* LiveShare
-      * Ruby-related
+     * Ruby-related
         * erb
-	* Rails i18n
-	* Ruby
-	* Ruby Language Colorization
-	* Ruby Solargraph
-	* ruby-rubocop
-	* VSCode Ruby
-	* Slim
+       * Rails i18n
+       * Ruby
+       * Ruby Language Colorization
+       * Ruby Solargraph
+       * ruby-rubocop
+       * VSCode Ruby
+       * Slim
       * Javascript-related
         * ESLint
-	* ES6
+        * ES6
