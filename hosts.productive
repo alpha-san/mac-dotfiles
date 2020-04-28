@@ -1,0 +1,45 @@
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+255.255.255.255	broadcasthost
+::1             localhost
+# Work wasters
+127.0.0.1	reddit.com
+127.0.0.1	www.reddit.com
+127.0.0.1	https://www.reddit.com
+127.0.0.1	ycombinator.com
+127.0.0.1	news.ycombinator.com
+127.0.0.1	https://www.ycombinator.com/
+127.0.0.1	www.ycombinator.com
+127.0.0.1	facebook.com
+127.0.0.1	www.facebook.com
+127.0.0.1	https://www.facebook.com
+127.0.0.1	login.facebook.com
+127.0.0.1	twitter.com
+127.0.0.1	www.twitter.com
+127.0.0.1	https://www.twitter.com
+127.0.0.1	https://twitter.com/home
+127.0.0.1	api.twitter.com
+127.0.0.1	video.twimg.com
+127.0.0.1	cdn.twitter.com
+127.0.0.1	abs.twimg.com
+127.0.0.1   	apps.facebook.com
+127.0.0.1	https://www.youtube.com
+127.0.0.1	www.youtube.com
+127.0.0.1	youtube.com
+127.0.0.1	endclothing.com
+127.0.0.1	www.endclothing.com
+127.0.0.1	stockx.com
+127.0.0.1	amazon.com
+127.0.0.1	www.amazon.com
+127.0.0.1	slickdeals.net
+127.0.0.1	instagram.com
+127.0.0.1	www.instagram.com
+127.0.0.1	https://www.instagram.com
+127.0.0.1	https://www.apple.com
+127.0.0.1	www.apple.com
+127.0.0.1	apple.com
