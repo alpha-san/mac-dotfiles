@@ -19,6 +19,7 @@ Baseline configuration:
   * Theme: Night Owl
   * Font: Dank Mono
   * zshrc + [oh my zsh config](https://ohmyz.sh/)
+  * [Delete whole word, jumb forward and backward a word](https://medium.com/@jonnyhaynes/jump-forwards-backwards-and-delete-a-word-in-iterm2-on-mac-os-43821511f0a)
 4. IDE setup
   * VS Code
     * Theme: Night Owl
