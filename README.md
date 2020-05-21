@@ -11,6 +11,7 @@ Baseline configuration:
     * Automatically hide and show the Dock
   * Keyboard
     * Remap Caps Lock => Cmd
+    * [Increase key repeat rate](https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x)
 2. Workflow setup
   * [yabai](https://github.com/koekeishiya/yabai) (tiling wm)
   * [skhd](https://github.com/koekeishiya/skhd) (hotkeys to setup wm to simulate i3wm)
