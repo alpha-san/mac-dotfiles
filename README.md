@@ -13,6 +13,7 @@ Baseline configuration:
     * Remap Caps Lock => Cmd
 2. Workflow setup
   * [yabai](https://github.com/koekeishiya/yabai) (tiling wm)
+    * [Prevent re-ordering of desktop spaces](https://apple.stackexchange.com/questions/214348/how-to-prevent-mac-from-changing-the-order-of-desktops-spaces)
   * [skhd](https://github.com/koekeishiya/skhd) (hotkeys to setup wm to simulate i3wm)
   * [uebersicht](https://github.com/felixhageloh/uebersicht) (adding widgets)
 3. Terminal setup
