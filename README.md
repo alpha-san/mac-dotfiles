@@ -11,6 +11,7 @@ Baseline configuration:
     * Automatically hide and show the Dock
   * Keyboard
     * Remap Caps Lock => Cmd
+    * [Increase key repeat rate](https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x)
 2. Workflow setup
   * [yabai](https://github.com/koekeishiya/yabai) (tiling wm)
     * [Prevent re-ordering of desktop spaces](https://apple.stackexchange.com/questions/214348/how-to-prevent-mac-from-changing-the-order-of-desktops-spaces)
@@ -20,6 +21,7 @@ Baseline configuration:
   * Theme: Night Owl
   * Font: Dank Mono
   * zshrc + [oh my zsh config](https://ohmyz.sh/)
+  * [Delete whole word, jumb forward and backward a word](https://medium.com/@jonnyhaynes/jump-forwards-backwards-and-delete-a-word-in-iterm2-on-mac-os-43821511f0a)
 4. IDE setup
   * VS Code
     * Theme: Night Owl
