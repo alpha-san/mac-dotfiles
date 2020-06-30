@@ -12,6 +12,8 @@ Baseline configuration:
   * Keyboard
     * Remap Caps Lock => Cmd
     * [Increase key repeat rate](https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x)
+  * Mouse
+    * [Mapping third party mouse to back/forward](https://sensible-side-buttons.archagon.net/)
 2. Workflow setup
   * [yabai](https://github.com/koekeishiya/yabai) (tiling wm)
     * [Prevent re-ordering of desktop spaces](https://apple.stackexchange.com/questions/214348/how-to-prevent-mac-from-changing-the-order-of-desktops-spaces)
