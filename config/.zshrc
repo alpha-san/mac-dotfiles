@@ -129,3 +129,10 @@ tabtitle_preexec() {
 [[ -z $preexec_functions ]] && preexec_functions=()
 preexec_functions=($preexec_functions tabtitle_preexec)
 
+export GITHUB_CLIENT_ID="7d75af50df19b945c8d4"
+export GITHUB_CLIENT_SECRET="e36d2c1d05bdb3181f9e7f5baddf7a6ffd0a9e37"
+export SPOTIFY_CLIENT_ID="b1b5f35d77e840559ea27b5636478a84"
+export SPOTIFY_CLIENT_SECRET="1b7f0aaa37694ef4934af0ebe31dd695"
+export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+
+cd ~/workspace/silver-sheet

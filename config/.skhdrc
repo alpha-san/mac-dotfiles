@@ -38,6 +38,11 @@ ctrl + alt - j : yabai -m window --swap south
 ctrl + alt - k : yabai -m window --swap north
 ctrl + alt - l : yabai -m window --swap east
 
+shift + alt + cmd - h : yabai -m window --swap west
+shift + alt + cmd - j : yabai -m window --swap south
+shift + alt + cmd - k : yabai -m window --swap north
+shift + alt + cmd - l : yabai -m window --swap east
+
 # Sends Window to Space and shifts focus
 # Send: Shift + Cmd + [NUM]
 shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
