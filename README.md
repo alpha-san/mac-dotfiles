@@ -18,7 +18,7 @@ Baseline configuration:
   * [yabai](https://github.com/koekeishiya/yabai) (tiling wm)
     * [Prevent re-ordering of desktop spaces](https://apple.stackexchange.com/questions/214348/how-to-prevent-mac-from-changing-the-order-of-desktops-spaces)
   * [skhd](https://github.com/koekeishiya/skhd) (hotkeys to setup wm to simulate i3wm)
-  * [uebersicht](https://github.com/felixhageloh/uebersicht) (adding widgets)
+  * [spacebar](https://github.com/cmacrae/spacebar) (adding topbar widget)
 3. Terminal setup
   * Theme: Night Owl
   * Font: Dank Mono
@@ -37,6 +37,7 @@ Baseline configuration:
 	* Vim
 	* Prettier
 	* LiveShare
+	* footsteps
      * Ruby-related
         * erb
        * Rails i18n
@@ -49,3 +50,14 @@ Baseline configuration:
       * Javascript-related
         * ESLint
         * ES6
+      * Other
+        * [Move navigation to the right](https://twitter.com/code/status/1346573944703348743?lang=en)
+5. Other Apps
+  * Notion
+  * Azure Data Studio
+  * Anki
+  * Station
+  * Evernote
+  * PSequel
+  * Firefox Developer Edition
+  * MacVim
