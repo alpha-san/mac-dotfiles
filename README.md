@@ -16,6 +16,7 @@ Baseline configuration:
     * [Mapping third party mouse to back/forward](https://sensible-side-buttons.archagon.net/)
 2. Workflow setup
   * [yabai](https://github.com/koekeishiya/yabai) (tiling wm)
+    * [Disable rootless](https://www.macworld.co.uk/how-to/how-turn-off-mac-os-x-system-integrity-protection-rootless-3638975/)
     * [Prevent re-ordering of desktop spaces](https://apple.stackexchange.com/questions/214348/how-to-prevent-mac-from-changing-the-order-of-desktops-spaces)
   * [skhd](https://github.com/koekeishiya/skhd) (hotkeys to setup wm to simulate i3wm)
   * [spacebar](https://github.com/cmacrae/spacebar) (adding topbar widget)
