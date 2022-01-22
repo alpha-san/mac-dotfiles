@@ -11,7 +11,7 @@ Baseline configuration:
     * Automatically hide and show the Dock
   * Keyboard
     * Remap Caps Lock => Cmd
-    * [Increase key repeat rate](https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x)
+    * [Increase key repeat rate](https://vimforvscode.com/enable-key-repeat-vim)
   * Mouse
     * [Mapping third party mouse to back/forward](https://sensible-side-buttons.archagon.net/)
 2. Workflow setup
