@@ -2,17 +2,17 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/allanfarinas/.oh-my-zsh"
+export ZSH="/Users/allan/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -26,8 +26,14 @@ ZSH_THEME="robbyrussell"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -39,6 +45,8 @@ DISABLE_AUTO_TITLE="true"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -58,8 +66,8 @@ DISABLE_AUTO_TITLE="true"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
@@ -80,12 +88,8 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Set environment variables from .env file
-eval $(cat ~/.env | sed 's/^/export /')
-
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-export PATH="/Users/allanfarinas/Qt5.5.0/5.5/clang_64/bin/:$PATH"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -99,36 +103,51 @@ alias vim="nvim"
 alias ss="cd ~/workspace && ~/bin/ss_tmux_script.sh"
 alias productive="sudo ~/bin/productivity.sh --productive"
 alias unproductive="sudo ~/bin/productivity.sh --clean"
+alias kill-tmux="tmux kill-session && killall -9 node && killall -9 ruby"
+alias start-app="~/scripts/start_carerev_tmux.sh"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
 
 # hyper
 # shows current directory as tab name
 # # Override auto-title when static titles are desired ($ title My new title)
-title() { export TITLE_OVERRIDDEN=1; echo -en "\e]0;$*\a"}
-# Turn off static titles ($ autotitle)
-autotitle() { export TITLE_OVERRIDDEN=0 }; autotitle
-# Condition checking if title is overridden
-overridden() { [[ $TITLE_OVERRIDDEN == 1 ]]; }
-# Echo asterisk if git state is dirty
-gitDirty() { [[ $(git status 2> /dev/null | grep -o '\w\+' | tail -n1) != ("clean"|"") ]] && echo "*" }
+# title() { export TITLE_OVERRIDDEN=1; echo -en "\e]0;$*\a"}
+# # Turn off static titles ($ autotitle)
+# autotitle() { export TITLE_OVERRIDDEN=0 }; autotitle
+# # Condition checking if title is overridden
+# overridden() { [[ $TITLE_OVERRIDDEN == 1 ]]; }
+# # Echo asterisk if git state is dirty
+# gitDirty() { [[ $(git status 2> /dev/null | grep -o '\w\+' | tail -n1) != ("clean"|"") ]] && echo "*" }
 
-# Show cwd when shell prompts for input.
-tabtitle_precmd() {
-   if overridden; then return; fi
-   pwd=$(pwd) # Store full path as variable
-   cwd=${pwd##*/} # Extract current working dir only
-   print -Pn "\e]0;$cwd$(gitDirty)\a" # Replace with $pwd to show full path
-}
-[[ -z $precmd_functions ]] && precmd_functions=()
-precmd_functions=($precmd_functions tabtitle_precmd)
+# # Show cwd when shell prompts for input.
+# tabtitle_precmd() {
+#    if overridden; then return; fi
+#    pwd=$(pwd) # Store full path as variable
+#    cwd=${pwd##*/} # Extract current working dir only
+#    print -Pn "\e]0;$cwd$(gitDirty)\a" # Replace with $pwd to show full path
+# }
+# [[ -z $precmd_functions ]] && precmd_functions=()
+# precmd_functions=($precmd_functions tabtitle_precmd)
 
-# Prepend command (w/o arguments) to cwd while waiting for command to complete.
-tabtitle_preexec() {
-   if overridden; then return; fi
-   printf "\033]0;%s\a" "${1%% *} | $cwd$(gitDirty)" # Omit construct from $1 to show args
-}
-[[ -z $preexec_functions ]] && preexec_functions=()
-preexec_functions=($preexec_functions tabtitle_preexec)
+# # Prepend command (w/o arguments) to cwd while waiting for command to complete.
+# tabtitle_preexec() {
+#    if overridden; then return; fi
+#    printf "\033]0;%s\a" "${1%% *} | $cwd$(gitDirty)" # Omit construct from $1 to show args
+# }
+# [[ -z $preexec_functions ]] && preexec_functions=()
+# preexec_functions=($preexec_functions tabtitle_preexec)
 
-export PATH="/usr/local/opt/imagemagick@6/bin:$PATH"
+# Load NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
-cd ~/workspace/silver-sheet
+export ADMIN_SLACK_CHANNEL=allan-notifs-int
+export AWS_ACCESS_KEY_ID=ASIAUEBAL3TJHLKMIXPS
+export AWS_SECRET_ACCESS_KEY=Uwi5D4c6Hp38mG7r2lSDVrGK4s7mq/ExzHSdusNw
+export API_APP_BASE_URL=http://localhost:10000/api/v1
+export TOOLS_APP_BASE_URL=http://localhost:10002/tools
+export HOMEBREW_NO_AUTO_UPDATE=1
+
+cd ~/workspace
+clear
