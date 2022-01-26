@@ -143,8 +143,6 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 export ADMIN_SLACK_CHANNEL=allan-notifs-int
-export AWS_ACCESS_KEY_ID=ASIAUEBAL3TJHLKMIXPS
-export AWS_SECRET_ACCESS_KEY=Uwi5D4c6Hp38mG7r2lSDVrGK4s7mq/ExzHSdusNw
 export API_APP_BASE_URL=http://localhost:10000/api/v1
 export TOOLS_APP_BASE_URL=http://localhost:10002/tools
 export HOMEBREW_NO_AUTO_UPDATE=1
