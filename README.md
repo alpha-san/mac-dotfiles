@@ -14,6 +14,7 @@ Baseline configuration:
      * [Increase key repeat rate](https://vimforvscode.com/enable-key-repeat-vim)
    * Mouse
      * [Mapping third party mouse to back/forward](https://sensible-side-buttons.archagon.net/)
+   * [HomeBrew](https://brew.sh/)
 2. Workflow setup
    * [yabai](https://github.com/koekeishiya/yabai) (tiling wm)
      * [Disable rootless](https://www.macworld.co.uk/how-to/how-turn-off-mac-os-x-system-integrity-protection-rootless-3638975/)
