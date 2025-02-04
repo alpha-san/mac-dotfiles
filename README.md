@@ -23,6 +23,7 @@ Baseline configuration:
    * [spacebar](https://github.com/cmacrae/spacebar) (adding topbar widget)
    * [Rectangle](https://rectangleapp.com/) (Windows-like keybinding)
 3. Terminal setup
+   * Client: [Ghostty](https://ghostty.org/)
    * Theme: Night Owl
    * Font: Dank Mono
    * zshrc + [oh my zsh config](https://ohmyz.sh/)
@@ -65,6 +66,9 @@ Baseline configuration:
      * [StrongBox Autofill](https://chromewebstore.google.com/detail/strongbox-autofill/mnilpkfepdibngheginihjpknnopchbn?hl=en-US)
      * [Vimium](https://chromewebstore.google.com/detail/vimium/dbepggeogbaibhgnhhndojpepiihcmeb?hl=en)
      * [Picture-in-Picture](https://chromewebstore.google.com/detail/picture-in-picture-extens/hkgfoiooedgoejojocmhlaklaeopbecg?hl=en)
+     * [UnTrap for YouTube](https://chromewebstore.google.com/detail/untrap-for-youtube/enboaomnljigfhfjfoalacienlhjlfil?hl=en-US)
+     * [SocialFocus] (https://chromewebstore.google.com/detail/socialfocus-hide-distract/abocjojdmemdpiffeadpdnicnlhcndcg?hl=en-US)
+     * Distill Web Monitor
 8. Other Apps
    * Notion
    * Anki
