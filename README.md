@@ -9,6 +9,7 @@ Baseline configuration:
      * Enable: "Automatically hide and show status bar"
    * Dock
      * Automatically hide and show the Dock
+     * Disable "show recent apps" in dock
    * Keyboard
      * Remap Caps Lock => Cmd
      * [Increase key repeat rate](https://vimforvscode.com/enable-key-repeat-vim)
