@@ -61,6 +61,18 @@ Baseline configuration:
    * Install plugins using [vim-plug package manager](https://opensource.com/article/20/2/how-install-vim-plugins)
    * Plugins:
      * [vim-auto-save](https://vimawesome.com/plugin/vim-auto-save)
+6. Neovim Setup
+   * Install [Neovim](https://neovim.io/) (recommended via Homebrew: `brew install neovim`)
+   * Run `./install.sh` to symlink `config/nvim/` to `~/.config/nvim`
+   * Plugin manager: [lazy.nvim](https://github.com/folke/lazy.nvim) (auto-bootstrapped on first launch)
+   * Plugins:
+     * [NERDTree](https://github.com/preservim/nerdtree) — file explorer (`<D-b>` to toggle)
+     * [fzf-lua](https://github.com/ibhagwan/fzf-lua) — fuzzy finder (`<C-p>` for files, `<C-S-f>` for live grep, `<leader>fb` for buffers)
+     * [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) — file icons (dependency of fzf-lua)
+   * Key settings:
+     * Leader key: `Space`
+     * Tab width: 2 spaces
+     * Python host: managed via pyenv (`~/.pyenv/shims/python3`)
 6. Brave Browser Setup
    * Extensions
      * [BlockSite](https://mybrowseraddon.com/block-site.html)
