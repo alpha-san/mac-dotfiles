@@ -93,8 +93,21 @@ require("lazy").setup({
     --{
       "numirias/semshi",
       build = ":UpdateRemotePlugins"
-    }, 
+    },
     --]]
+    {
+      "lewis6991/gitsigns.nvim",
+      event = { "BufReadPre", "BufNewFile" },
+      config = function()
+        require("gitsigns").setup({
+          current_line_blame = true,
+          current_line_blame_opts = {
+            delay = 300,
+            virt_text_pos = "eol",
+          },
+        })
+      end,
+    },
     -- add other plugins here as needed
   },
   -- Configure any other settings here. See the documentation for more details.

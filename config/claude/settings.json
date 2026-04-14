@@ -1,0 +1,43 @@
+{
+  "statusLine": {
+    "type": "command",
+    "command": "bash /Users/allan/.claude/statusline-command.sh"
+  },
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "printf '\\a'"
+          }
+        ]
+      }
+    ]
+  },
+  "enabledPlugins": {
+    "rust-analyzer-lsp@claude-plugins-official": true,
+    "ruby-lsp@claude-plugins-official": true,
+    "ghostty-notifications@recursechat-agent-workflow": true
+  },
+  "extraKnownMarketplaces": {
+    "compound-engineering-plugin": {
+      "source": {
+        "source": "github",
+        "repo": "EveryInc/compound-engineering-plugin"
+      }
+    },
+    "recursechat-agent-workflow": {
+      "source": {
+        "source": "github",
+        "repo": "recursechat/agent-workflow"
+      }
+    }
+  },
+  "voiceEnabled": true,
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  }
+}

@@ -69,11 +69,31 @@ Baseline configuration:
      * [NERDTree](https://github.com/preservim/nerdtree) — file explorer (`<D-b>` to toggle)
      * [fzf-lua](https://github.com/ibhagwan/fzf-lua) — fuzzy finder (`<C-p>` for files, `<C-S-f>` for live grep, `<leader>fb` for buffers)
      * [nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons) — file icons (dependency of fzf-lua)
+     * [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) — git diff signs in the gutter and current-line blame
    * Key settings:
      * Leader key: `Space`
      * Tab width: 2 spaces
      * Python host: managed via pyenv (`~/.pyenv/shims/python3`)
-6. Brave Browser Setup
+7. Claude Code Setup
+   * Install the CLI: `npm install -g @anthropic-ai/claude-code` (requires Node.js; `brew install node` if needed)
+   * Run `claude` once in any directory and sign in to complete first-time auth
+   * Run `./install.sh` to symlink `config/claude/settings.json` and `config/claude/CLAUDE.md` into `~/.claude/`
+     * `settings.json` — statusline command, notification hook (terminal bell), enabled plugins, and extra marketplaces
+     * `CLAUDE.md` — global instructions (commit conventions, PR format, worktree rules)
+   * Marketplaces (added automatically via `settings.json`, no manual step needed):
+     * [compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin)
+     * [recursechat/agent-workflow](https://github.com/recursechat/agent-workflow)
+   * Plugins (enabled via `settings.json`, install on first launch with `/plugin`):
+     * `rust-analyzer-lsp@claude-plugins-official` — Rust LSP integration
+     * `ruby-lsp@claude-plugins-official` — Ruby LSP integration
+     * `ghostty-notifications@recursechat-agent-workflow` — Ghostty terminal notifications
+   * Per-project plugins (installed ad hoc, not in global config):
+     * `superpowers@claude-plugins-official` — enabled in individual project checkouts
+     * `compound-engineering@compound-engineering-plugin` — enabled in individual project checkouts
+   * Local-only files (not tracked in this repo; create by hand if needed):
+     * `~/.claude/clickup.conf` — ClickUp API token for the `clickup` skill
+     * `~/.claude/statusline-command.sh` — referenced by `statusLine` in `settings.json`
+8. Brave Browser Setup
    * Extensions
      * [BlockSite](https://mybrowseraddon.com/block-site.html)
      * [StrongBox Autofill](https://chromewebstore.google.com/detail/strongbox-autofill/mnilpkfepdibngheginihjpknnopchbn?hl=en-US)
@@ -82,7 +102,7 @@ Baseline configuration:
      * [UnTrap for YouTube](https://chromewebstore.google.com/detail/untrap-for-youtube/enboaomnljigfhfjfoalacienlhjlfil?hl=en-US)
      * [SocialFocus] (https://chromewebstore.google.com/detail/socialfocus-hide-distract/abocjojdmemdpiffeadpdnicnlhcndcg?hl=en-US)
      * Distill Web Monitor
-8. Other Apps
+9. Other Apps
    * Notion
    * Anki
    * PSequel/Azure Data Studio/DBeaver
