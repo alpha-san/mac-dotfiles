@@ -1,0 +1,24 @@
+# Ghostty configuration
+# Docs: https://ghostty.org/docs/config
+# Run `ghostty +show-config --default --docs` to see all options.
+
+# Bottom padding
+window-padding-y = 10
+
+# Transparency + blur
+background-opacity = 0.90
+background-blur-radius = 20
+
+# Font
+font-family = MonoLisa
+font-size = 12
+font-thicken = true
+
+# Shell integration (clickable prompts, better scrollback)
+shell-integration = zsh
+
+# Clickable URLs
+link-url = true
+
+# Hide mouse when typing
+mouse-hide-while-typing = true
