@@ -1,8 +1,4 @@
 {
-  "statusLine": {
-    "type": "command",
-    "command": "bash /Users/allan/.claude/statusline-command.sh"
-  },
   "hooks": {
     "Notification": [
       {
@@ -14,19 +10,45 @@
           }
         ]
       }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 $HOME/.claude/hooks/block_dangerous_bash.py"
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 $HOME/.claude/hooks/block_sensitive_reads.py"
+          }
+        ]
+      }
     ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "bash $HOME/.claude/statusline-command.sh"
   },
   "enabledPlugins": {
     "rust-analyzer-lsp@claude-plugins-official": true,
     "ruby-lsp@claude-plugins-official": true,
-    "ghostty-notifications@recursechat-agent-workflow": true
+    "ghostty-notifications@recursechat-agent-workflow": true,
+    "compound-engineering@compound-engineering-plugin": true
   },
   "extraKnownMarketplaces": {
     "compound-engineering-plugin": {
       "source": {
         "source": "github",
         "repo": "EveryInc/compound-engineering-plugin"
-      }
+      },
+      "autoUpdate": true
     },
     "recursechat-agent-workflow": {
       "source": {
@@ -35,9 +57,11 @@
       }
     }
   },
-  "voiceEnabled": true,
   "voice": {
     "enabled": true,
     "mode": "hold"
-  }
+  },
+  "skipDangerousModePermissionPrompt": true,
+  "preferredNotifChannel": "iterm2",
+  "voiceEnabled": true
 }

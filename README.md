@@ -29,6 +29,7 @@ Baseline configuration:
    * Font: [MonoLisa](https://www.monolisa.dev/) (TTFs tracked under `fonts/`, copied into `~/Library/Fonts/` by `install.sh`)
    * Run `./install.sh` to symlink `config/ghostty/config` to `~/.config/ghostty/config`
    * zshrc + [oh my zsh config](https://ohmyz.sh/)
+   * Aliases tracked in `config/zsh/aliases.zsh` and symlinked by `install.sh` into `~/.oh-my-zsh/custom/aliases.zsh` (oh-my-zsh auto-sources every `*.zsh` file in `$ZSH_CUSTOM`)
    * [Delete whole word, jumb forward and backward a word](https://medium.com/@jonnyhaynes/jump-forwards-backwards-and-delete-a-word-in-iterm2-on-mac-os-43821511f0a)
 4. IDE setup
    * VS Code
@@ -78,9 +79,14 @@ Baseline configuration:
 7. Claude Code Setup
    * Install the CLI: `npm install -g @anthropic-ai/claude-code` (requires Node.js; `brew install node` if needed)
    * Run `claude` once in any directory and sign in to complete first-time auth
-   * Run `./install.sh` to symlink `config/claude/settings.json` and `config/claude/CLAUDE.md` into `~/.claude/`
-     * `settings.json` — statusline command, notification hook (terminal bell), enabled plugins, and extra marketplaces
+   * Run `./install.sh` to symlink the tracked Claude config into `~/.claude/`:
+     * `settings.json` — statusline command, notification hook (terminal bell), PreToolUse hooks, enabled plugins, and extra marketplaces
      * `CLAUDE.md` — global instructions (commit conventions, PR format, worktree rules)
+     * `statusline-command.sh` — bash script rendered as the statusline (referenced from `settings.json`)
+     * `hooks/` — Python PreToolUse hooks wired into `settings.json`:
+       * `block_dangerous_bash.py` — blocks destructive bash commands (matcher: `Bash`)
+       * `block_sensitive_reads.py` — blocks reading files that may contain secrets (matcher: `Read|Write|Edit`)
+     * `skills/clickup/SKILL.md` — agent skill for the ClickUp REST API. Symlinked into `~/.claude/skills/clickup/`. Requires `~/.claude/clickup.conf` (local-only) for auth.
    * Marketplaces (added automatically via `settings.json`, no manual step needed):
      * [compound-engineering-plugin](https://github.com/EveryInc/compound-engineering-plugin)
      * [recursechat/agent-workflow](https://github.com/recursechat/agent-workflow)
@@ -93,7 +99,6 @@ Baseline configuration:
      * `compound-engineering@compound-engineering-plugin` — enabled in individual project checkouts
    * Local-only files (not tracked in this repo; create by hand if needed):
      * `~/.claude/clickup.conf` — ClickUp API token for the `clickup` skill
-     * `~/.claude/statusline-command.sh` — referenced by `statusLine` in `settings.json`
 8. Brave Browser Setup
    * Extensions
      * [BlockSite](https://mybrowseraddon.com/block-site.html)
@@ -114,3 +119,7 @@ Baseline configuration:
    * [CCleaner](https://www.ccleaner.com/ccleaner-mac)
    * StrongBox
    * Dropbox (sync keepass)
+
+## Testing
+
+Before committing changes to `install.sh`, run `shellcheck install.sh` (`brew install shellcheck` if missing) to catch common bash bugs (unquoted variables, deprecated syntax, `ln`/`cp` footguns, etc.). Static analysis is enough for a script this small — no test framework needed.
