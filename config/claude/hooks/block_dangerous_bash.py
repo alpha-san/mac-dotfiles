@@ -29,7 +29,8 @@ HARD_BLOCKED_PATTERNS = [
     (r"\bsudo\s+chmod\s+777\b", "sudo chmod 777"),
 
     # Exfiltration via network
-    (r"\bssh\b.*@.*\s*<\s*", "ssh with stdin redirect (possible exfil)"),
+    # NOTE: ssh stdin redirect is handled separately in check_command() to allow
+    # *.render.com targets (used by the render-console skill).
     (r"\bnc\b.*-e\s+/bin", "netcat reverse shell"),
 
     # Rails-specific: never drop production DB
@@ -58,6 +59,11 @@ def check_command(command: str) -> tuple[str, str]:
     """
     Returns ('block', reason) | ('warn', reason) | ('allow', '')
     """
+    # ssh stdin redirect — block except for *.render.com (render-console skill)
+    if re.search(r"\bssh\b.*@.*\s*<\s*", command):
+        if not re.search(r"\bssh\b[^|;&\n]*@[^|;&\n]*\.render\.com\b", command):
+            return "block", "ssh with stdin redirect to non-Render host (possible exfil)"
+
     for entry in HARD_BLOCKED_PATTERNS:
         pattern, label = entry[0], entry[1]
         flags = entry[2] if len(entry) > 2 else 0
