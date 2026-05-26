@@ -1,16 +1,5 @@
 {
   "hooks": {
-    "Notification": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "printf '\\a'"
-          }
-        ]
-      }
-    ],
     "PreToolUse": [
       {
         "matcher": "Bash",
@@ -62,6 +51,8 @@
     "mode": "hold"
   },
   "skipDangerousModePermissionPrompt": true,
-  "preferredNotifChannel": "iterm2",
+  "preferredNotifChannel": "iterm2_with_bell",
+  "remoteControlAtStartup": true,
+  "agentPushNotifEnabled": true,
   "voiceEnabled": true
 }
